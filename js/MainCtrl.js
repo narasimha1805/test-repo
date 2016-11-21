@@ -34,12 +34,5 @@
 			{id: 3, label: 'Done Note', done: true},
 			{id: 4, label: 'Last Note', done: false, assignee: 'Raju'}
 		];
-
-		self.getNoteClass = function(status){
-			return {
-				done: status,
-				pending: !status
-			};
-		};
 	});
 })();
