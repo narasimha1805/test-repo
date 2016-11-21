@@ -24,6 +24,14 @@
 	}]);*/
 
 </script>
+<style>
+  .done {
+    background-color: green;
+  }
+  .pending {
+    background-color: red;
+  }
+</style>
 <head>
 <!-- defining a controller with alias -->
 <body ng-controller='MainCtrl as ctrl'>
@@ -42,6 +50,7 @@ message var value
 	<span class="label">{{note.label}}</span>
 	<!-- ng-bind can be used to bind the value ng-bind='note.status' and {{note.status}} will do the same work-->
 	<span class="status" ng-bind='note.done'></span>
+  <span class="assignee" ng-show='note.assignee' ng-bind='note.assignee'></span>
 </div>
 
 <body>
