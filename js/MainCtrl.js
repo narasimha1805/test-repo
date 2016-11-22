@@ -2,12 +2,15 @@
 *  controller inside a function
 */
 (function(){
+	'use strict'
 	/*
 	* Declaring a controller
 	* first option is controller name
 	* Second option is the behaviour of tat controler
+	* $scope is strictly bind with MainCtrl
+	* In html where ever this controller is defined we can use variables under this scope
 	*/
-	app.controller('MainCtrl',function(){
+	app.controller('MainCtrl',function($scope){
 
 		/* prints the message to browsers console*/
 		console.log('MainCtrl has been created');
@@ -34,5 +37,8 @@
 			{id: 3, label: 'Done Note', done: true},
 			{id: 4, label: 'Last Note', done: false, assignee: 'Raju'}
 		];
-	});
+		$scope.sayHello = function () {
+			return 'Hello';
+		};
+});
 })();
