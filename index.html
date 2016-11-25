@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='LunchCheck'>
   <head>
-    <script src="css\\bootstrap.min.css"></script>
-    <title>hello</title>
+    <script src="js\\angular.min.js"></script>
+    <script src="js\\app.js"></script>
+    <title>Check Lunch App</title>
   </head>
   <body>
-    <h1>Hello World....!</<h1><br>
-    this is my first web page by using Atom,browser-sync and git<br>
-    <a href="basic.html" class="btn btn-info" role="button">Click Me</a>
+    <div ng-controller='LunchCheckController'>
+      <div>
+      <input type="text" ng-model='items'><br>
+      Message : {{lunchMessage}}
+    </div><br>
+      <div>
+      <button ng-click='checkTooMuch()'>Check If Too Much</button>
+      </div>
+
+    </div>
   </body>
 </html>
