@@ -8,8 +8,8 @@
   <body>
     <div ng-controller='LunchCheckController'>
       <div>
-      <input type="text" ng-model='items'><br>
-      Message : {{lunchMessage}}
+      <input type="text" ng-model='items' placeholder="please enter your favuorite food items by , separation"><br>
+      <div style="color: {{messageColor}}">{{lunchMessage}}</div>
     </div><br>
       <div>
       <button ng-click='checkTooMuch()'>Check If Too Much</button>
