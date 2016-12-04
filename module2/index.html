@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='ShoppingListCheckOff'>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>module 2 solution</title>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/module2_app.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
   </head>
   <body>
+    <h1><center>Module 2 Solution</center></h1>
+
+    <div id="list1"  ng-controller='ToBuyController as toBuyList'>
+      <h3>To Buy</h3>
+      <ol>
+        <li ng-repeat='item in toBuyList.items'>
+          Buy {{item.quantity}} {{item.name}}
+
+          <button class='btn bnt-info' ng-click='toBuyList.bought($index);'>Bought</button>
+        </li>
+      </ol>
+      <h2 class="success"  ng-if='toBuyList.items.length===0'>{{toBuyList.message}}</h2>
+    </div>
+
+    <div id="list2" ng-controller='AlreadyBoughtController as alreadyBought'>
+      <h3>Already Bought</h3>
+      <ol>
+          <li ng-repeat='item in alreadyBought.items'>
+            Bought {{item.quantity}} {{item.name}}
+          </li>
+      </ol>
+
+      <h2 class="error" ng-if='alreadyBought.items.length===0'>{{alreadyBought.message}}</h2>
+
+    </div>
 
   </body>
 </html>
